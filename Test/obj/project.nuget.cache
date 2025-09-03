@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "PnrnfDWo1oY=",
+  "dgSpecHash": "BSns2qP/QjM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\progtesting.csproj",
+  "projectFilePath": "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\Test\\test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ervin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\ervin\\.nuget\\packages\\microsoft.codecoverage\\17.13.0\\microsoft.codecoverage.17.13.0.nupkg.sha512",
+    "C:\\Users\\ervin\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.8\\microsoft.extensions.dependencyinjection.abstractions.9.0.8.nupkg.sha512",
     "C:\\Users\\ervin\\.nuget\\packages\\microsoft.net.test.sdk\\17.13.0\\microsoft.net.test.sdk.17.13.0.nupkg.sha512",
     "C:\\Users\\ervin\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\ervin\\.nuget\\packages\\microsoft.testing.extensions.trxreport.abstractions\\1.8.2\\microsoft.testing.extensions.trxreport.abstractions.1.8.2.nupkg.sha512",

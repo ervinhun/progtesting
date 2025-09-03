@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\progtesting.csproj": {}
+    "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\Api\\progtesting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\progtesting.csproj": {
+    "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\Api\\progtesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\progtesting.csproj",
+        "projectUniqueName": "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\Api\\progtesting.csproj",
         "projectName": "progtesting",
-        "projectPath": "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\progtesting.csproj",
+        "projectPath": "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\Api\\progtesting.csproj",
         "packagesPath": "C:\\Users\\ervin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\obj\\",
+        "outputPath": "C:\\Users\\ervin\\Documents\\School\\PRG\\progtesting\\Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ervin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[14.5.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
