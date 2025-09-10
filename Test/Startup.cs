@@ -1,29 +1,32 @@
-﻿
+﻿using Api;
+using Database;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
-
-namespace Test;
+using Testcontainers.PostgreSql;
 
 public class Startup
 {
-    public void ConfigureServices(IServiceCollection services)
+    public static void ConfigureServices(IServiceCollection services)
     {
         Program.ConfigureServices(services);
-        
-        //Replace the DbContext with one made for testing
         services.RemoveAll(typeof(MyDbContext));
-        services.AddScoped<MyDbContext>(provider =>
+
+        services.AddScoped<MyDbContext>(factory =>
         {
-            var connection = new SqliteConnection("Data Source=:memory:");
-            connection.Open();
+            var postgreSqlContainer = new PostgreSqlBuilder().Build();
+            postgreSqlContainer.StartAsync().GetAwaiter().GetResult();
+            var connectionString = postgreSqlContainer.GetConnectionString();
             var options = new DbContextOptionsBuilder<MyDbContext>()
-                .UseSqlite(connection)
+                .UseNpgsql(connectionString)
                 .Options;
-            var context = new MyDbContext(options);
-            context.Database.EnsureCreated();
-            return context;
+            
+            var ctx = new MyDbContext(options);
+            ctx.Database.EnsureCreated();
+            
+            //seed
+            
+            return ctx;
         });
-        
     }
 }
