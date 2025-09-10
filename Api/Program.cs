@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Database;
 using Microsoft.EntityFrameworkCore;
 using Service;
@@ -10,7 +11,7 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        ConfigureApiServices(builder.Services);
+        ConfigureApiServices(builder.Services, builder.Configuration);
         builder.Services.AddOpenApiDocument(config =>
         {
             config.Title = "Pets";
@@ -30,14 +31,17 @@ public class Program
         app.Run();
     }
 
-    public static void ConfigureApiServices(IServiceCollection services)
+    public static void ConfigureApiServices(IServiceCollection services, ConfigurationManager builderConfiguration)
     {
         services.AddDbContext<MyDbContext>(options =>
         {
-            options.UseSqlite("Data Source=pets.db;Cache=Shared");
+            options.UseNpgsql(builderConfiguration.GetValue<string>("Db"));
         });
         services.AddScoped<PetService>();
         
-        services.AddControllers();
+        services.AddControllers().AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        });
     }
 }

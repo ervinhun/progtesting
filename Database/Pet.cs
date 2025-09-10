@@ -1,9 +1,23 @@
-﻿namespace Database;
+﻿using System;
+using System.Collections.Generic;
 
-public class Pet
+namespace Database;
+
+public partial class Pet
 {
-    public string Id { get; set; }
-    public string Name { get; set; }
-    public int Age { get; set; }
-    public DateTime CreatedAt { get; set; }
+    public string Id { get; set; } = null!;
+
+    public string Name { get; set; } = null!;
+
+    public string? Breed { get; set; }
+
+    public DateTime Createdat { get; set; }
+
+    public DateOnly? SoldDate { get; set; }
+
+    public decimal? Price { get; set; }
+
+    public string? Seller { get; set; }
+
+    public virtual Seller? SellerNavigation { get; set; }
 }

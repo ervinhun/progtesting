@@ -1,12 +1,9 @@
-﻿using API;
-using Infrastructure.Postgres.Scaffolding;
-using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
+﻿
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 
-namespace Tests;
+namespace Test;
 
 public class Startup
 {

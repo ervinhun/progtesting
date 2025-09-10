@@ -14,7 +14,7 @@ public class PetService (MyDbContext ctx)
         
         var pet = new Pet()
         {
-            CreatedAt = DateTime.UtcNow,
+            Createdat = DateTime.UtcNow,
             Id = Guid.NewGuid().ToString(),
             Name = dto.Name
         };
